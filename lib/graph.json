@@ -1,0 +1,99 @@
+{
+    "nodes": {
+        "23e8d5e9-7f0f-40bd-a60b-05a2aea4579b": {
+            "action_id": "LED_1",
+            "display_x": 500,
+            "display_y": 300,
+            "params": {
+                "name": [
+                    "Led 1"
+                ],
+                "brightness": [
+                    "30",
+                    "%"
+                ]
+            }
+        },
+        "3a27eaa4-7971-49d8-9d74-2e79a49054ed": {
+            "action_id": "LED_2",
+            "display_x": 800,
+            "display_y": 300,
+            "params": {
+                "name": [
+                    "Led 1"
+                ],
+                "frequency": [
+                    "10",
+                    "Hz"
+                ]
+            }
+        }
+    },
+    "edges": {
+        "361cf758-db06-4c9d-9b31-2d88269554bb": {
+            "trigger": [
+                {
+                    "id": "Button_1",
+                    "params": {
+                        "name": [
+                            "Button 1"
+                        ]
+                    }
+                },
+                {
+                    "id": "Gyro_1",
+                    "params": {
+                        "name": [
+                            "Gyroscope 1"
+                        ],
+                        "Rotation": [
+                            ">",
+                            "100",
+                            "dps"
+                        ]
+                    }
+                }
+            ],
+            "src_node_id": "23e8d5e9-7f0f-40bd-a60b-05a2aea4579b",
+            "dst_node_id": "3a27eaa4-7971-49d8-9d74-2e79a49054ed",
+            "start_x": 300,
+            "start_y": 300,
+            "end_x": 500,
+            "end_y": 500
+        },
+        "877cf758-ece5-4b80-bbf1-37a09c350196": {
+            "trigger": [
+                {
+                    "id": "Humid_1",
+                    "params": {
+                        "name": [
+                            "Humidity 1"
+                        ],
+                        "Humidity": [
+                            "35",
+                            "%"
+                        ]
+                    }
+                },
+                {
+                    "id": "Sound_1",
+                    "params": {
+                        "name": [
+                            "Sound 1"
+                        ],
+                        "Volume": [
+                            "70",
+                            "%"
+                        ]
+                    }
+                }
+            ],
+            "src_node_id": "23e8d5e9-7f0f-40bd-a60b-05a2aea4579b",
+            "dst_node_id": "3a27eaa4-7971-49d8-9d74-2e79a49054ed",
+            "start_x": 400,
+            "start_y": 200,
+            "end_x": 500,
+            "end_y": 200
+        }
+    }
+}

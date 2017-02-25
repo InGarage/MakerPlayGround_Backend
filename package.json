@@ -1,0 +1,20 @@
+{
+  "name": "makerplayground",
+  "version": "0.1.0",
+  "description": "Maker Playground's beckend API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "MakerPlayGround",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.14.0",
+    "express-jwt": "^5.1.0",
+    "tedious": "^1.14.0",
+    "uuid": "^3.0.1"
+  }
+}
