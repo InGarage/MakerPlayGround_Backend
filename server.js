@@ -17,7 +17,8 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-// app.use(cors());
+// Uncomment this line when develop on local machine
+//app.use(require('cors')());
 
 // Authentication middleware. When used, the access token must exist and be verified against
 // the signing secret for the API

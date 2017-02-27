@@ -16,5 +16,8 @@
     "express-jwt": "^5.1.0",
     "tedious": "^1.14.0",
     "uuid": "^3.0.1"
+  },
+  "devDependencies": {
+    "cors": "^2.8.1"
   }
 }
