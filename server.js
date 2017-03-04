@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const jwt = require('express-jwt');
+const cors = require('cors');
 
 var port = process.env.PORT || 3001;
 
@@ -17,8 +18,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-// Uncomment this line when develop on local machine
-//app.use(require('cors')());
+app.use(cors());
 
 // Authentication middleware. When used, the access token must exist and be verified against
 // the signing secret for the API
