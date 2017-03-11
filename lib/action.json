@@ -22,7 +22,8 @@
             "name": "brightness",
             "control": "slider",
             "default_value": [
-              "50"
+              "50",
+              "%"
             ],
             "args": [
               "%"
@@ -30,8 +31,8 @@
             "regex": "^(\\d([.]\\d{1,})?|[1-9]\\d([.]\\d{1,})?|100)$"
           }
         ],
-        "compatibility": {
-          "interface": "MP_LED",
+        "require": {
+          "type": "Led",
           "fn_name": "dim"
         }
       },
@@ -55,7 +56,8 @@
             "name": "frequency",
             "control": "spinbox",
             "default_value": [
-              "2"
+              "2",
+              "Hz"
             ],
             "args": [
               "Hz"
@@ -63,8 +65,8 @@
             "regex": "^(\\d{1,})$"
           }
         ],
-        "compatibility": {
-          "interface": "MP_LED",
+        "require": {
+          "type": "Led",
           "fn_name": "blink"
         }
       },
@@ -88,7 +90,8 @@
             "name": "brightness",
             "control": "slider",
             "default_value": [
-              "100"
+              "100",
+              "%"
             ],
             "args": [
               "%"
@@ -96,8 +99,8 @@
             "regex": "^(\\d([.]\\d{1,})?|[1-9]\\d([.]\\d{1,})?|100)$"
           }
         ],
-        "compatibility": {
-          "interface": "MP_LED",
+        "require": {
+          "type": "Led",
           "fn_name": "on"
         }
       },
@@ -118,8 +121,8 @@
             "regex": "^[\\S]+$"
           }
         ],
-        "compatibility": {
-          "interface": "MP_LED",
+        "require": {
+          "type": "Led",
           "fn_name": "off"
         }
       }
@@ -145,8 +148,8 @@
             "regex": "^[\\S]+$"
           }
         ],
-        "compatibility": {
-          "interface": "MP_LCD",
+        "require": {
+          "type": "Lcd",
           "fn_name": "backlight_on"
         }
       },
@@ -167,8 +170,8 @@
             "regex": "^[\\S]+$"
           }
         ],
-        "compatibility": {
-          "interface": "MP_LCD",
+        "require": {
+          "type": "Lcd",
           "fn_name": "backlight_off"
         }
       },
@@ -200,8 +203,8 @@
             "regex": "^[\\S ]{0,16}+\\n+[\\S ]{0,16}$"
           }
         ],
-        "compatibility": {
-          "interface": "MP_LCD",
+        "require": {
+          "type": "Lcd",
           "fn_name": "show"
         }
       },
@@ -222,8 +225,8 @@
             "regex": "^[\\S]+$"
           }
         ],
-        "compatibility": {
-          "interface": "MP_LCD",
+        "require": {
+          "type": "Lcd",
           "fn_name": "clear"
         }
       }
@@ -252,7 +255,8 @@
             "name": "frequency",
             "control": "spinbox",
             "default_value": [
-              "1000"
+              "1000",
+              "Hz"
             ],
             "args": [
               "Hz"
@@ -263,7 +267,8 @@
             "name": "duration",
             "control": "spinbox",
             "default_value": [
-              "100"
+              "100",
+              "ms"
             ],
             "args": [
               "ms"
@@ -271,8 +276,8 @@
             "regex": "^(\\d{1,})$"
           }
         ],
-        "compatibility": {
-          "interface": "MP_Amplifier",
+        "require": {
+          "type": "Audio",
           "fn_name": "beep"
         }
       }
@@ -301,7 +306,7 @@
             "name": "direction",
             "control": "radio",
             "default_value": [
-              ""
+              "CW"
             ],
             "args": [
               "CW",
@@ -313,7 +318,8 @@
             "name": "speed",
             "control": "slider",
             "default_value": [
-              "50"
+              "50",
+              "%"
             ],
             "args": [
               "%"
@@ -321,8 +327,8 @@
             "regex": "^(\\d([.]\\d{1,})?|[1-9]\\d([.]\\d{1,})?|100)$"
           }
         ],
-        "compatibility": {
-          "interface": "MP_DCMotor",
+        "require": {
+          "type": "Motor",
           "fn_name": "on"
         }
       },
@@ -343,8 +349,8 @@
             "regex": "^[\\S]+$"
           }
         ],
-        "compatibility": {
-          "interface": "MP_DCMotor",
+        "require": {
+          "type": "Motor",
           "fn_name": "reverse"
         }
       },
@@ -368,7 +374,8 @@
             "name": "speed",
             "control": "slider",
             "default_value": [
-              "50"
+              "50",
+              "%"
             ],
             "args": [
               "%"
@@ -376,8 +383,8 @@
             "regex": "^(\\d([.]\\d{1,})?|[1-9]\\d([.]\\d{1,})?|100)$"
           }
         ],
-        "compatibility": {
-          "interface": "MP_DCMotor",
+        "require": {
+          "type": "Motor",
           "fn_name": "set_speed"
         }
       },
@@ -398,8 +405,8 @@
             "regex": "^[\\S]+$"
           }
         ],
-        "compatibility": {
-          "interface": "MP_DCMotor",
+        "require": {
+          "type": "Motor",
           "fn_name": "stop"
         }
       }

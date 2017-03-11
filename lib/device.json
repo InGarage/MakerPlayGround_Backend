@@ -6,13 +6,30 @@
     "description": "Adafruit Mono 2.5W Class D Audio Amplifier - PAM8302",
     "ic": "PAM8302",
     "price": "3.95",
-    "connectivity": "PWM",
     "vcc_min": "2",
     "vcc_max": "5.5",
     "vccio_min": "",
     "vccio_max": "",
     "image": "https://cdn-shop.adafruit.com/970x728/2130-01.jpg",
-    "link": "https://www.adafruit.com/products/2130"
+    "link": "https://www.adafruit.com/products/2130",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "PWM",
+        "optional_connection": "GPIO",
+        "type": [
+          {
+            "name": "Audio",
+            "fn": [
+              {
+                "name": "beep",
+                "dependency": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "DEV_2",
@@ -21,13 +38,30 @@
     "description": "Electret Microphone Amplifier - MAX4466 with Adjustable Gain",
     "ic": "MAX4466",
     "price": "6.95",
-    "connectivity": "Analog",
     "vcc_min": "2.4",
     "vcc_max": "5",
     "vccio_min": "",
     "vccio_max": "",
     "image": "https://cdn-shop.adafruit.com/970x728/1063-03.jpg",
-    "link": "https://www.adafruit.com/products/1063"
+    "link": "https://www.adafruit.com/products/1063",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "Analog",
+        "optional_connection": "",
+        "type": [
+          {
+            "name": "Audio",
+            "fn": [
+              {
+                "name": "checkVol",
+                "dependency": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "DEV_3",
@@ -36,13 +70,52 @@
     "description": "Adafruit BME280 I2C or SPI Temperature Humidity Pressure Sensor",
     "ic": "BME280",
     "price": "19.95",
-    "connectivity": "I2C",
     "vcc_min": "3",
     "vcc_max": "5",
     "vccio_min": "",
     "vccio_max": "",
     "image": "https://cdn-shop.adafruit.com/970x728/2652-00.jpg",
-    "link": "https://www.adafruit.com/products/2652"
+    "link": "https://www.adafruit.com/products/2652",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "I2C",
+        "optional_connection": "",
+        "type": [
+          {
+            "name": "Temperature",
+            "fn": [
+              {
+                "name": "checkTemp",
+                "dependency": []
+              }
+            ]
+          },
+          {
+            "name": "Humidity",
+            "fn": [
+              {
+                "name": "humidity",
+                "dependency": []
+              }
+            ]
+          },
+          {
+            "name": "Pressure",
+            "fn": [
+              {
+                "name": "pressure",
+                "dependency": []
+              },
+              {
+                "name": "attitude",
+                "dependency": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "DEV_4",
@@ -51,13 +124,39 @@
     "description": "Adafruit Si7021 Temperature & Humidity Sensor Breakout Board",
     "ic": "Si7021",
     "price": "6.95",
-    "connectivity": "I2C",
     "vcc_min": "3",
     "vcc_max": "5",
     "vccio_min": "",
     "vccio_max": "",
     "image": "https://cdn-shop.adafruit.com/970x728/3251-00.jpg",
-    "link": "https://www.adafruit.com/products/3251"
+    "link": "https://www.adafruit.com/products/3251",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "I2C",
+        "optional_connection": "",
+        "type": [
+          {
+            "name": "Temperature",
+            "fn": [
+              {
+                "name": "checkTemp",
+                "dependency": []
+              }
+            ]
+          },
+          {
+            "name": "Humidity",
+            "fn": [
+              {
+                "name": "humidity",
+                "dependency": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "DEV_5",
@@ -66,13 +165,48 @@
     "description": "I2C / SPI character LCD backpack",
     "ic": "",
     "price": "9.95",
-    "connectivity": "I2C",
     "vcc_min": "5",
     "vcc_max": "5",
     "vccio_min": "",
     "vccio_max": "",
     "image": "https://cdn-shop.adafruit.com/970x728/292-04.jpg",
-    "link": "https://www.adafruit.com/products/292"
+    "link": "https://www.adafruit.com/products/292",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "I2C",
+        "optional_connection": "",
+        "type": [
+          {
+            "name": "Lcd",
+            "fn": [
+              {
+                "name": "backlight_on",
+                "dependency": []
+              },
+              {
+                "name": "backlight_off",
+                "dependency": []
+              },
+              {
+                "name": "show",
+                "dependency": []
+              },
+              {
+                "name": "clear",
+                "dependency": []
+              },
+              {
+                "name": "displayTemp",
+                "dependency": [
+                  "Temperature"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "DEV_6",
@@ -81,13 +215,57 @@
     "description": "General Led",
     "ic": "",
     "price": "",
-    "connectivity": "PWM",
     "vcc_min": "",
     "vcc_max": "",
     "vccio_min": "",
     "vccio_max": "",
-    "image": "https://cdn.sparkfun.com//assets/parts/8/3/4/08377-02-L.jpg",
-    "link": "https://www.sparkfun.com/products/9590"
+    "image": "",
+    "link": "https://www.sparkfun.com/products/9590",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "GPIO",
+        "optional_connection": "",
+        "type": [
+          {
+            "name": "Led",
+            "fn": [
+              {
+                "name": "on",
+                "dependency": []
+              },
+              {
+                "name": "off",
+                "dependency": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "connection": "PWM",
+        "optional_connection": "",
+        "type": [
+          {
+            "name": "Led",
+            "fn": [
+              {
+                "name": "on",
+                "dependency": []
+              },
+              {
+                "name": "off",
+                "dependency": []
+              },
+              {
+                "name": "dim",
+                "dependency": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "DEV_7",
@@ -96,13 +274,38 @@
     "description": "L3GD20H Triple-Axis Gyro Breakout Board - L3GD20/L3G4200 Upgrade - L3GD20H",
     "ic": "L3GD20H",
     "price": "12.5",
-    "connectivity": "I2C",
     "vcc_min": "3",
     "vcc_max": "5",
     "vccio_min": "",
     "vccio_max": "",
     "image": "https://cdn-shop.adafruit.com/970x728/1032-03.jpg",
-    "link": "https://www.adafruit.com/products/1032"
+    "link": "https://www.adafruit.com/products/1032",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "I2C",
+        "optional_connection": "GPIO",
+        "type": [
+          {
+            "name": "Gyroscope",
+            "fn": [
+              {
+                "name": "rotate_x",
+                "dependency": []
+              },
+              {
+                "name": "rotate_y",
+                "dependency": []
+              },
+              {
+                "name": "rotate_z",
+                "dependency": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "DEV_8",
@@ -111,13 +314,30 @@
     "description": "Contact-less Infrared Thermopile Sensor Breakout - TMP007",
     "ic": "TMP007",
     "price": "12.5",
-    "connectivity": "I2C",
     "vcc_min": "2.5",
     "vcc_max": "5",
     "vccio_min": "",
     "vccio_max": "",
     "image": "https://cdn-shop.adafruit.com/970x728/2023-00.jpg",
-    "link": "https://www.adafruit.com/products/2023"
+    "link": "https://www.adafruit.com/products/2023",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "I2C",
+        "optional_connection": "GPIO",
+        "type": [
+          {
+            "name": "Temperature",
+            "fn": [
+              {
+                "name": "checkTemp",
+                "dependency": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "DEV_9",
@@ -126,13 +346,59 @@
     "description": "Triple-axis Accelerometer+Magnetometer (Compass) Board - LSM303",
     "ic": "LSM303",
     "price": "14.95",
-    "connectivity": "I2C",
     "vcc_min": "3",
     "vcc_max": "5",
     "vccio_min": "",
     "vccio_max": "",
     "image": "https://cdn-shop.adafruit.com/970x728/1120-00.jpg",
-    "link": "https://www.adafruit.com/products/1120"
+    "link": "https://www.adafruit.com/products/1120",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "I2C",
+        "optional_connection": "GPIO",
+        "type": [
+          {
+            "name": "Accelerometer",
+            "fn": [
+              {
+                "name": "accel_x",
+                "dependency": []
+              },
+              {
+                "name": "accel_y",
+                "dependency": []
+              },
+              {
+                "name": "accel_z",
+                "dependency": []
+              }
+            ]
+          },
+          {
+            "name": "Magnetometer",
+            "fn": [
+              {
+                "name": "mac_x",
+                "dependency": []
+              },
+              {
+                "name": "mac_y",
+                "dependency": []
+              },
+              {
+                "name": "mac_z",
+                "dependency": []
+              },
+              {
+                "name": "compass",
+                "dependency": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "DEV_10",
@@ -141,13 +407,76 @@
     "description": "SparkFun 9DoF Sensor Stick",
     "ic": "LSM9DS1",
     "price": "14.95",
-    "connectivity": "I2C",
     "vcc_min": "1.9",
     "vcc_max": "3.6",
     "vccio_min": "",
     "vccio_max": "",
     "image": "https://cdn.sparkfun.com//assets/parts/1/1/6/3/3/13944-01.jpg",
-    "link": "https://www.sparkfun.com/products/13944"
+    "link": "https://www.sparkfun.com/products/13944",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "I2C",
+        "optional_connection": "",
+        "type": [
+          {
+            "name": "Accelerometer",
+            "fn": [
+              {
+                "name": "accel_x",
+                "dependency": []
+              },
+              {
+                "name": "accel_y",
+                "dependency": []
+              },
+              {
+                "name": "accel_z",
+                "dependency": []
+              }
+            ]
+          },
+          {
+            "name": "Magnetometer",
+            "fn": [
+              {
+                "name": "mac_x",
+                "dependency": []
+              },
+              {
+                "name": "mac_y",
+                "dependency": []
+              },
+              {
+                "name": "mac_z",
+                "dependency": []
+              },
+              {
+                "name": "compass",
+                "dependency": []
+              }
+            ]
+          },
+          {
+            "name": "Gyroscope",
+            "fn": [
+              {
+                "name": "rotate_x",
+                "dependency": []
+              },
+              {
+                "name": "rotate_y",
+                "dependency": []
+              },
+              {
+                "name": "rotate_z",
+                "dependency": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "DEV_11",
@@ -156,13 +485,34 @@
     "description": "General Button",
     "ic": "",
     "price": "",
-    "connectivity": "GPIO",
     "vcc_min": "",
     "vcc_max": "",
     "vccio_min": "",
     "vccio_max": "",
-    "image": "https://cdn-shop.adafruit.com/970x728/476-00.jpg",
-    "link": "https://www.adafruit.com/products/476"
+    "image": "",
+    "link": "https://www.adafruit.com/products/476",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "GPIO",
+        "optional_connection": "",
+        "type": [
+          {
+            "name": "Button",
+            "fn": [
+              {
+                "name": "release",
+                "dependency": []
+              },
+              {
+                "name": "doubleRelease",
+                "dependency": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "DEV_12",
@@ -171,12 +521,80 @@
     "description": "Adafruit Motor/Stepper/Servo Shield for Arduino v2 Kit - v2.3",
     "ic": "",
     "price": "19.95",
-    "connectivity": "I2C",
     "vcc_min": "3",
     "vcc_max": "5",
     "vccio_min": "",
     "vccio_max": "",
     "image": "https://cdn-shop.adafruit.com/970x728/1438-00.jpg",
-    "link": "https://www.adafruit.com/product/1438"
+    "link": "https://www.adafruit.com/product/1438",
+    "sub_device": [
+      {
+        "name": "DC Motor 1",
+        "conflict": [
+          "Step Motor 1"
+        ]
+      },
+      {
+        "name": "DC Motor 2",
+        "conflict": [
+          "Step Motor 1"
+        ]
+      },
+      {
+        "name": "DC Motor 3",
+        "conflict": [
+          "Step Motor 2"
+        ]
+      },
+      {
+        "name": "DC Motor 4",
+        "conflict": [
+          "Step Motor 2"
+        ]
+      },
+      {
+        "name": "Step Motor 1",
+        "conflict": [
+          "DC Motor 1",
+          "DC Motor 2"
+        ]
+      },
+      {
+        "name": "Step Motor 2",
+        "conflict": [
+          "DC Motor 3",
+          "DC Motor 4"
+        ]
+      }
+    ],
+    "compatibility": [
+      {
+        "connection": "I2C",
+        "optional_connection": "",
+        "type": [
+          {
+            "name": "Motor",
+            "fn": [
+              {
+                "name": "on",
+                "dependency": []
+              },
+              {
+                "name": "reverse",
+                "dependency": []
+              },
+              {
+                "name": "set_speed",
+                "dependency": []
+              },
+              {
+                "name": "stop",
+                "dependency": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]
