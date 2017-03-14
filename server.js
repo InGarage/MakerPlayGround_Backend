@@ -191,9 +191,7 @@ app.post('/api/deviceselector', authenticate, function (req, res) {
   //   devices: []
   // };
 
-  // res.json(response);
-
-  res.sendStatus(200);
+  res.json(response);
 });
 
 app.post('/api/codegen', authenticate, function (req, res) {
