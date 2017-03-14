@@ -1,8 +1,13 @@
 var libhelper = require('./libhelper.js');
 
+String.prototype.replaceAll = function (search, replacement) {
+    var target = this;
+    return target.split(search).join(replacement);
+};
+
 module.exports = {
     getDeviceList: function (graph) {
-        var deviceMapping = new Map();
+        let graphData = {};
 
         // populate device mapping
         for (const nodeId of Object.keys(graph['nodes'])) {
@@ -13,17 +18,17 @@ module.exports = {
                 throw 'Error: unknown action id => ' + node['action_id'];
             }
             // create a new device if it doesn't exist in a map
-            if (!deviceMapping.has(name)) {
-                const device = {
-                    type: action['require']['type'],
-                    name: name,
-                    fn: [action['require']['fn_name']]
-                };
-                deviceMapping.set(name, device);
+            const type = action['require']['type'];
+            if (!graphData.hasOwnProperty(type)) {
+                graphData[type] = {};
+            }
+            if (!graphData[type].hasOwnProperty(name)) {
+                graphData[type][name] = [action['require']['fn_name']];
             } else {
-                const device = deviceMapping.get(name);
-                if (device.fn.indexOf(action['require']['fn_name']) === -1) {
-                    device.fn.append(action['require']['fn_name']);
+                // push the new function name to the exist list
+                const fnList = graphData[type][name];
+                if (fnList.indexOf(action['require']['fn_name']) === -1) {
+                    fnList.push(action['require']['fn_name']);
                 }
             }
         }
@@ -36,25 +41,59 @@ module.exports = {
                     throw 'Error: unknown trigger id => ' + trigger['id'];
                 }
                 // create a new device if it doesn't exist in a map
-                if (!deviceMapping.has(name)) {
-                    const device = {
-                        type: triggerInfo['require']['type'],
-                        name: name,
-                        fn: [triggerInfo['require']['fn_name']]
-                    };
-                    deviceMapping.set(name, device);
+                const type = triggerInfo['require']['type'];
+                if (!graphData.hasOwnProperty(type)) {
+                    graphData[type] = {};
+                }
+                if (!graphData[type].hasOwnProperty(name)) {
+                    graphData[type][name] = [triggerInfo['require']['fn_name']];
                 } else {
-                    const device = deviceMapping.get(name);
-                    if (device.fn.indexOf(triggerInfo['require']['fn_name']) === -1) {
-                        device.fn.append(triggerInfo['require']['fn_name']);
+                    // push the new function name to the exist list
+                    const fnList = graphData[type][name];
+                    if (fnList.indexOf(triggerInfo['require']['fn_name']) === -1) {
+                        fnList.push(triggerInfo['require']['fn_name']);
                     }
                 }
             }
         }
 
-        for (const device of deviceMapping) {
-            libhelper.findDeviceByFunction(device['type'], device['fn']);
+        console.log('DEVICE MAPPING', graphData);
+
+        const response = [];
+
+        const platformName = ['arduino', 'grovepi'];
+        for (const pn of platformName) {
+            const platformInfo = {
+                mcu: pn,
+                devices: []
+            };
+
+            for (const type of Object.keys(graphData)) {
+                const category = {
+                    category: type,
+                    devices: []
+                }
+                for (const name of Object.keys(graphData[type])) {
+                    const compatibleDevices = libhelper.findDeviceByFunction(pn, type, graphData[type][name]);
+                    const device = {
+                        name: name,
+                        compatible_device: compatibleDevices
+                    }
+                    category.devices.push(device);
+                }
+                platformInfo.devices.push(category);
+            }
+            
+            response.push(platformInfo);
         }
 
+        // console.log(result);
+
+        // let response = [];
+        // for (const [key, value] of result.entries()) {
+        //     response.push({ category: key, device: value });
+        // }
+        
+        return response;
     }
 }

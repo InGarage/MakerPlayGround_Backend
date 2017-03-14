@@ -1,0 +1,101 @@
+{
+    "project_name": "Palm",
+    "project_data": {
+        "nodes": {
+            "c544585a-7b57-45ca-908e-2de36d949bf4": {
+                "action_id": "LED_3",
+                "display_x": 344.9999850463877,
+                "display_y": 396.9999818725597,
+                "params": {
+                    "name": [
+                        "LED 1"
+                    ],
+                    "brightness": [
+                        "100"
+                    ]
+                }
+            },
+            "35560e44-a3e5-40f3-a952-675a24165dd3": {
+                "action_id": "LED_4",
+                "display_x": 551.999972412111,
+                "display_y": 272.9999894409186,
+                "params": {
+                    "name": [
+                        "LED 2"
+                    ]
+                }
+            },
+            "a14db398-1597-4656-b239-9bd7434dab96": {
+                "action_id": "Audio_1",
+                "display_x": 548.9999725952165,
+                "display_y": 471.99997729492327,
+                "params": {
+                    "name": [
+                        "Audio 1"
+                    ],
+                    "frequency": [
+                        "1000"
+                    ],
+                    "duration": [
+                        "100"
+                    ]
+                }
+            }
+        },
+        "edges": {
+            "8a8728af-63d5-4c0f-99a9-5a0195057e1d": {
+                "trigger": [],
+                "src_node_id": "",
+                "dst_node_id": "c544585a-7b57-45ca-908e-2de36d949bf4",
+                "start_x": 200,
+                "start_y": 400,
+                "end_x": 309.5786129416123,
+                "end_y": 399.36142173311947
+            },
+            "e77729f0-32b9-471f-bb98-91681055e0d9": {
+                "trigger": [
+                    {
+                        "id": "Accel_1",
+                        "params": {
+                            "name": [
+                                "Accelerate X 1"
+                            ],
+                            "Accelerate": [
+                                "1"
+                            ]
+                        }
+                    }
+                ],
+                "src_node_id": "c544585a-7b57-45ca-908e-2de36d949bf4",
+                "dst_node_id": "35560e44-a3e5-40f3-a952-675a24165dd3",
+                "start_x": 371.82694748542616,
+                "start_y": 373.7499477587263,
+                "end_x": 516.561232208273,
+                "end_y": 275.08462196606126
+            },
+            "3a2868ba-4601-4b5c-b833-f1b4fa9b9749": {
+                "trigger": [
+                    {
+                        "id": "Temp_1",
+                        "params": {
+                            "name": [
+                                "Temperature 1"
+                            ],
+                            "Temperature": [
+                                "25"
+                            ]
+                        }
+                    }
+                ],
+                "src_node_id": "c544585a-7b57-45ca-908e-2de36d949bf4",
+                "dst_node_id": "a14db398-1597-4656-b239-9bd7434dab96",
+                "start_x": 374.2983928207567,
+                "start_y": 417.0462608760754,
+                "end_x": 514.6184742317473,
+                "end_y": 463.15901748940627
+            }
+        },
+        "entry_edge": "8a8728af-63d5-4c0f-99a9-5a0195057e1d"
+    },
+    "project_id": "31dcac32-e4de-4153-9b2e-a3fa338dc240"
+}

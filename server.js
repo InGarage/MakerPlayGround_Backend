@@ -179,13 +179,69 @@ app.put('/api/project', authenticate, function (req, res) {
   });
 });
 
+app.post('/api/deviceselector', authenticate, function (req, res) {
+  console.log('using device selector');
+  console.log(req.body['project_data']);
+
+  var device = require('./device');
+  var response = device.getDeviceList(req.body['project_data']);
+
+  console.log(JSON.stringify(response, null, 2));
+  // var response = {
+  //   devices: []
+  // };
+
+  // res.json(response);
+
+  res.sendStatus(200);
+});
+
 app.post('/api/codegen', authenticate, function (req, res) {
   console.log('using codegen');
   console.log(req.body['project_data']);
 
-  var generator = require('./generator');
-  var response = generator.generateCode(req.body['project_data']);
-  console.log(response);
+  //var generator = require('./generator');
+  //var response = generator.generateCode(req.body['project_data']);
+  //console.log(response);
+
+  //var device = require('./device');
+  //device.getDeviceList(req.body['project_data']);
+
+  var diagram = require('./diagram');
+
+  const data = {
+    platform: 'arduino',
+    mcu: 'MCU_1',
+    variant: 'Arduino UNO',
+    connection: [
+      {
+        name: 'Audio',
+        type: 'DEV_1',
+        pin: '3'
+      },
+      {
+        name: 'Mic',
+        type: 'DEV_2',
+        pin: 'A0'
+      },
+      {
+        name: 'Temp1',
+        type: 'DEV_3',
+        pin: 'I2C'
+      },
+      {
+        name: 'Temp2',
+        type: 'DEV_4',
+        pin: 'I2C'
+      }
+    ]
+  };
+
+  var response = {
+    devices: [],
+    diagram: JSON.stringify(diagram.getConnectionDiagram(data)),
+    sourcecode: "We will launch the new code generator soon!!!!"
+  };
 
   res.json(response);
 });

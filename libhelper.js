@@ -2,8 +2,11 @@
 
 var actions = require('./lib/action.json');
 var triggers = require('./lib/trigger.json');
-var interfaces = require('./lib/interface.json');
-var devices = require('./lib/device.json');
+var devices = {
+    arduino: require('./lib/device_arduino.json'),
+    grovepi: require('./lib/device_grovepi.json')
+};
+var mcu = require('./lib/mcu.json');
 
 module.exports = {
     findActionById: function (id) {
@@ -44,43 +47,51 @@ module.exports = {
         }
         return result;
     },
-    findDeviceById: function (id) {
-        for (var device of devices) {
-            if (device['id'] === id) {
-                return device;
+    findDeviceById: function (platform, id) {
+        const device = devices[platform];
+        for (const d of device) {
+            if (d['id'] === id) {
+                return d;
             }
         }
         return undefined;
     },
-    findDeviceByFunction: function(deviceType, funcName) {
-        var result = [];
-        for (var device of devices) {
-            for (var compatibility of device.compatibility) {
-                for (var type of compatibility.type) {
+    findDeviceByFunction: function (platform, deviceType, funcName) {
+        const result = [];
+        for (const device of devices[platform]) {
+            let connectivity = [];
+            for (const compatibility of device.compatibility) {
+                for (const type of compatibility.type) {
                     if (type.name === deviceType) {
-                        var availableName = [];
-                        for (var fn of type.fn) {
-                            availableName.push(fn['name']);
-                        }
-
-                        for (var fn of funcName) {
-                            if (fn)
-                        }
-
-                        for (var fn of type.fn) {
-                            if (fn.name === funcName) {
-                                var d = {
-                                    name: device.id,
-                                    connection: compatibility.connection,
-                                    dependency: fn.dependency
-                                }
-                                result.push(d);
+                        // for each function support we push the one that match what we need
+                        // into a list along with it's dependency
+                        const supportFn = [];
+                        for (const fn of type.fn) {
+                            if (funcName.indexOf(fn) !== -1) {
+                                supportFn.push(fn);
                             }
+                        }
+
+                        // if the lenght of support function it equal to the lenght of funcName
+                        // (function that we need) then this device is usuable
+                        if (supportFn.length === funcName.length) {
+                            connectivity.push(compatibility.connection);
                         }
                     }
                 }
             }
+            if (connectivity.length != 0) {
+                result.push({ name: device.id, connectivity: connectivity });
+            }
         }
         return result;
-    }
+    },
+    findMCUById: function (id) {
+        for (const m of mcu) {
+            if (m['id'] === id) {
+                return m;
+            }
+        }
+        return undefined;
+    },
 }

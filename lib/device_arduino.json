@@ -21,15 +21,50 @@
           {
             "name": "Audio",
             "fn": [
-              {
-                "name": "beep",
-                "dependency": []
-              }
+              "beep",
+              "tone"
             ]
           }
         ]
       }
-    ]
+    ],
+    "display": {
+      "type": "breadboard",
+      "width": "43.2",
+      "height": "68.4",
+      "pin": [
+        {
+          "name": "A+",
+          "x": "5.783",
+          "y": "58.342",
+          "connection": "PWM"
+        },
+        {
+          "name": "A-",
+          "x": "12.983",
+          "y": "58.342",
+          "connection": ""
+        },
+        {
+          "name": "SD",
+          "x": "20.183",
+          "y": "58.342",
+          "connection": ""
+        },
+        {
+          "name": "Vin",
+          "x": "27.383",
+          "y": "58.342",
+          "connection": "VCC"
+        },
+        {
+          "name": "Gnd",
+          "x": "34.583",
+          "y": "58.342",
+          "connection": "GND"
+        }
+      ]
+    }
   },
   {
     "id": "DEV_2",
@@ -53,15 +88,38 @@
           {
             "name": "Audio",
             "fn": [
-              {
-                "name": "checkVol",
-                "dependency": []
-              }
+              "checkVol",
+              "getVol"
             ]
           }
         ]
       }
-    ]
+    ],
+    "display": {
+      "type": "breadboard",
+      "width": "39.6",
+      "height": "61.2",
+      "pin": [
+        {
+          "name": "OUT",
+          "x": "10.823",
+          "y": "55.462",
+          "connection": "Analog"
+        },
+        {
+          "name": "GND",
+          "x": "18.023",
+          "y": "55.462",
+          "connection": "GND"
+        },
+        {
+          "name": "VCC",
+          "x": "25.223",
+          "y": "55.462",
+          "connection": "VCC"
+        }
+      ]
+    }
   },
   {
     "id": "DEV_3",
@@ -85,37 +143,78 @@
           {
             "name": "Temperature",
             "fn": [
-              {
-                "name": "checkTemp",
-                "dependency": []
-              }
+              "checkTemp",
+              "getTemp"
             ]
           },
           {
             "name": "Humidity",
             "fn": [
-              {
-                "name": "humidity",
-                "dependency": []
-              }
+              "humidity",
+              "getHumidity"
             ]
           },
           {
             "name": "Pressure",
             "fn": [
-              {
-                "name": "pressure",
-                "dependency": []
-              },
-              {
-                "name": "attitude",
-                "dependency": []
-              }
+              "pressure",
+              "getPressure",
+              "attitude",
+              "getAttitude"
             ]
           }
         ]
       }
-    ]
+    ],
+    "display": {
+      "type": "breadboard",
+      "width": "50.4",
+      "height": "54",
+      "pin": [
+        {
+          "name": "VIN",
+          "x": "2.183",
+          "y": "45.382",
+          "connection": "VCC"
+        },
+        {
+          "name": "3Vo",
+          "x": "9.383",
+          "y": "45.382",
+          "connection": ""
+        },
+        {
+          "name": "GND",
+          "x": "16.583",
+          "y": "45.382",
+          "connection": "GND"
+        },
+        {
+          "name": "SCK",
+          "x": "23.783",
+          "y": "45.382",
+          "connection": "SCL"
+        },
+        {
+          "name": "SDO",
+          "x": "30.983",
+          "y": "45.382",
+          "connection": ""
+        },
+        {
+          "name": "SDI",
+          "x": "38.183",
+          "y": "45.382",
+          "connection": "SDA"
+        },
+        {
+          "name": "CS",
+          "x": "45.383",
+          "y": "45.382",
+          "connection": ""
+        }
+      ]
+    }
   },
   {
     "id": "DEV_4",
@@ -139,24 +238,57 @@
           {
             "name": "Temperature",
             "fn": [
-              {
-                "name": "checkTemp",
-                "dependency": []
-              }
+              "checkTemp",
+              "getTemp"
             ]
           },
           {
             "name": "Humidity",
             "fn": [
-              {
-                "name": "humidity",
-                "dependency": []
-              }
+              "humidity",
+              "getHumidity"
             ]
           }
         ]
       }
-    ]
+    ],
+    "display": {
+      "type": "breadboard",
+      "width": "43.2",
+      "height": "50.4",
+      "pin": [
+        {
+          "name": "VIN",
+          "x": "5.783",
+          "y": "41.782",
+          "connection": "VCC"
+        },
+        {
+          "name": "3Vo",
+          "x": "12.983",
+          "y": "41.782",
+          "connection": ""
+        },
+        {
+          "name": "GND",
+          "x": "20.183",
+          "y": "41.782",
+          "connection": "GND"
+        },
+        {
+          "name": "SCL",
+          "x": "27.383",
+          "y": "41.782",
+          "connection": "SCL"
+        },
+        {
+          "name": "SDA",
+          "x": "34.583",
+          "y": "41.782",
+          "connection": "SDA"
+        }
+      ]
+    }
   },
   {
     "id": "DEV_5",
@@ -180,33 +312,70 @@
           {
             "name": "Lcd",
             "fn": [
-              {
-                "name": "backlight_on",
-                "dependency": []
-              },
-              {
-                "name": "backlight_off",
-                "dependency": []
-              },
-              {
-                "name": "show",
-                "dependency": []
-              },
-              {
-                "name": "clear",
-                "dependency": []
-              },
-              {
-                "name": "displayTemp",
-                "dependency": [
-                  "Temperature"
-                ]
-              }
+              "backlight_on",
+              "backlight_off",
+              "show",
+              "clear",
+              "displayTemp",
+              "showAccel_x",
+              "showAccel_y",
+              "showAccel_z",
+              "showAttitude",
+              "showCompass",
+              "showDoubleRelease",
+              "showHumidity",
+              "showMag_x",
+              "showMag_y",
+              "showMag_z",
+              "showPressure",
+              "showRelease",
+              "showRotate_x",
+              "showRotate_y",
+              "showRotate_z",
+              "showTemp",
+              "showVolume"
             ]
           }
         ]
       }
-    ]
+    ],
+    "display": {
+      "type": "standalone",
+      "width": "142.143",
+      "height": "63.145",
+      "pin": [
+        {
+          "name": "LAT",
+          "x": "94.646",
+          "y": "51.033",
+          "connection": ""
+        },
+        {
+          "name": "DAT",
+          "x": "104.567",
+          "y": "51.033",
+          "connection": ""
+        },
+        {
+          "name": "CLK",
+          "x": "114.489",
+          "y": "51.033",
+          "connection": ""
+        },
+        {
+          "name": "5V",
+          "x": "124.4103333",
+          "y": "51.033",
+          "connection": "VCC"
+        },
+        {
+          "name": "GND",
+          "x": "134.3318333",
+          "y": "51.033",
+          "connection": "GND"
+        }
+      ]
+    }
   },
   {
     "id": "DEV_6",
@@ -230,14 +399,8 @@
           {
             "name": "Led",
             "fn": [
-              {
-                "name": "on",
-                "dependency": []
-              },
-              {
-                "name": "off",
-                "dependency": []
-              }
+              "on",
+              "off"
             ]
           }
         ]
@@ -249,23 +412,15 @@
           {
             "name": "Led",
             "fn": [
-              {
-                "name": "on",
-                "dependency": []
-              },
-              {
-                "name": "off",
-                "dependency": []
-              },
-              {
-                "name": "dim",
-                "dependency": []
-              }
+              "on",
+              "off",
+              "dim"
             ]
           }
         ]
       }
-    ]
+    ],
+    "display": {}
   },
   {
     "id": "DEV_7",
@@ -289,23 +444,18 @@
           {
             "name": "Gyroscope",
             "fn": [
-              {
-                "name": "rotate_x",
-                "dependency": []
-              },
-              {
-                "name": "rotate_y",
-                "dependency": []
-              },
-              {
-                "name": "rotate_z",
-                "dependency": []
-              }
+              "rotate_x",
+              "rotate_y",
+              "rotate_z",
+              "getRotate_x",
+              "getRotate_y",
+              "getRotate_z"
             ]
           }
         ]
       }
-    ]
+    ],
+    "display": {}
   },
   {
     "id": "DEV_8",
@@ -329,15 +479,14 @@
           {
             "name": "Temperature",
             "fn": [
-              {
-                "name": "checkTemp",
-                "dependency": []
-              }
+              "checkTemp",
+              "getTemp"
             ]
           }
         ]
       }
-    ]
+    ],
+    "display": {}
   },
   {
     "id": "DEV_9",
@@ -361,44 +510,31 @@
           {
             "name": "Accelerometer",
             "fn": [
-              {
-                "name": "accel_x",
-                "dependency": []
-              },
-              {
-                "name": "accel_y",
-                "dependency": []
-              },
-              {
-                "name": "accel_z",
-                "dependency": []
-              }
+              "accel_x",
+              "accel_y",
+              "accel_z",
+              "getAccel_x",
+              "getAccel_y",
+              "getAccel_z"
             ]
           },
           {
             "name": "Magnetometer",
             "fn": [
-              {
-                "name": "mac_x",
-                "dependency": []
-              },
-              {
-                "name": "mac_y",
-                "dependency": []
-              },
-              {
-                "name": "mac_z",
-                "dependency": []
-              },
-              {
-                "name": "compass",
-                "dependency": []
-              }
+              "mag_x",
+              "mag_y",
+              "mag_z",
+              "compass",
+              "getMag_x",
+              "getMag_y",
+              "getMag_z",
+              "getCompass"
             ]
           }
         ]
       }
-    ]
+    ],
+    "display": {}
   },
   {
     "id": "DEV_10",
@@ -422,61 +558,42 @@
           {
             "name": "Accelerometer",
             "fn": [
-              {
-                "name": "accel_x",
-                "dependency": []
-              },
-              {
-                "name": "accel_y",
-                "dependency": []
-              },
-              {
-                "name": "accel_z",
-                "dependency": []
-              }
+              "accel_x",
+              "accel_y",
+              "accel_z",
+              "getAccel_x",
+              "getAccel_y",
+              "getAccel_z"
             ]
           },
           {
             "name": "Magnetometer",
             "fn": [
-              {
-                "name": "mac_x",
-                "dependency": []
-              },
-              {
-                "name": "mac_y",
-                "dependency": []
-              },
-              {
-                "name": "mac_z",
-                "dependency": []
-              },
-              {
-                "name": "compass",
-                "dependency": []
-              }
+              "mag_x",
+              "mag_y",
+              "mag_z",
+              "compass",
+              "getMag_x",
+              "getMag_y",
+              "getMag_z",
+              "getCompass"
             ]
           },
           {
             "name": "Gyroscope",
             "fn": [
-              {
-                "name": "rotate_x",
-                "dependency": []
-              },
-              {
-                "name": "rotate_y",
-                "dependency": []
-              },
-              {
-                "name": "rotate_z",
-                "dependency": []
-              }
+              "rotate_x",
+              "rotate_y",
+              "rotate_z",
+              "getRotate_x",
+              "getRotate_y",
+              "getRotate_z"
             ]
           }
         ]
       }
-    ]
+    ],
+    "display": {}
   },
   {
     "id": "DEV_11",
@@ -500,19 +617,16 @@
           {
             "name": "Button",
             "fn": [
-              {
-                "name": "release",
-                "dependency": []
-              },
-              {
-                "name": "doubleRelease",
-                "dependency": []
-              }
+              "release",
+              "doubleRelease",
+              "getRelease",
+              "getDoubleRelease"
             ]
           }
         ]
       }
-    ]
+    ],
+    "display": {}
   },
   {
     "id": "DEV_12",
@@ -575,26 +689,102 @@
           {
             "name": "Motor",
             "fn": [
-              {
-                "name": "on",
-                "dependency": []
-              },
-              {
-                "name": "reverse",
-                "dependency": []
-              },
-              {
-                "name": "set_speed",
-                "dependency": []
-              },
-              {
-                "name": "stop",
-                "dependency": []
-              }
+              "on",
+              "reverse",
+              "set_speed",
+              "stop"
             ]
           }
         ]
       }
-    ]
+    ],
+    "display": {}
+  },
+  {
+    "id": "DEV_13",
+    "mfr": "Chiness",
+    "mfr_part_no": "",
+    "description": "Simple LCD with backpack",
+    "ic": "",
+    "price": "3",
+    "vcc_min": "5",
+    "vcc_max": "5",
+    "vccio_min": "",
+    "vccio_max": "",
+    "image": "https://i.lnwfile.com/f3qvk9.jpg",
+    "link": "https://www.arduinoall.com/product/142/1602-lcd-blue-screen-16x2-lcd-with-backlight-of-the-lcd-screen",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "I2C",
+        "optional_connection": "",
+        "type": [
+          {
+            "name": "Lcd",
+            "fn": [
+              "backlight_on",
+              "backlight_off",
+              "show",
+              "clear",
+              "displayTemp",
+              "showAccel_x",
+              "showAccel_y",
+              "showAccel_z",
+              "showAttitude",
+              "showCompass",
+              "showDoubleRelease",
+              "showHumidity",
+              "showMag_x",
+              "showMag_y",
+              "showMag_z",
+              "showPressure",
+              "showRelease",
+              "showRotate_x",
+              "showRotate_y",
+              "showRotate_z",
+              "showTemp",
+              "showVolume"
+            ]
+          }
+        ]
+      }
+    ],
+    "display": {
+      "type": "standalone",
+      "width": "142.143",
+      "height": "63.145",
+      "pin": [
+        {
+          "name": "LAT",
+          "x": "94.646",
+          "y": "51.033",
+          "connection": ""
+        },
+        {
+          "name": "DAT",
+          "x": "104.567",
+          "y": "51.033",
+          "connection": ""
+        },
+        {
+          "name": "CLK",
+          "x": "114.489",
+          "y": "51.033",
+          "connection": ""
+        },
+        {
+          "name": "5V",
+          "x": "124.4103333",
+          "y": "51.033",
+          "connection": "VCC"
+        },
+        {
+          "name": "GND",
+          "x": "134.3318333",
+          "y": "51.033",
+          "connection": "GND"
+        }
+      ]
+    }
   }
 ]

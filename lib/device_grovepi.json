@@ -1,0 +1,473 @@
+[
+  {
+    "id": "DEV_1",
+    "mfr": "Dexter",
+    "mfr_part_no": "",
+    "description": "Grove Buzzer",
+    "ic": "",
+    "price": "4.99",
+    "vcc_min": "",
+    "vcc_max": "",
+    "vccio_min": "",
+    "vccio_max": "",
+    "image": "https://32414320wji53mwwch1u68ce-wpengine.netdna-ssl.com/wp-content/uploads/2015/07/Grove-Buzzer-800x800.jpg",
+    "link": "https://www.dexterindustries.com/shop/grove-buzzer/",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "PWM",
+        "optional_connection": "GPIO",
+        "type": [
+          {
+            "name": "Audio",
+            "fn": [
+              "beep"
+            ]
+          }
+        ]
+      }
+    ],
+    "display": {}
+  },
+  {
+    "id": "DEV_2",
+    "mfr": "Dexter",
+    "mfr_part_no": "",
+    "description": "Grove Sound Sensor",
+    "ic": "",
+    "price": "11.99",
+    "vcc_min": "",
+    "vcc_max": "",
+    "vccio_min": "",
+    "vccio_max": "",
+    "image": "https://32414320wji53mwwch1u68ce-wpengine.netdna-ssl.com/wp-content/uploads/2015/07/Grove-Sound-Sensor-800x800.jpg",
+    "link": "https://www.dexterindustries.com/shop/grove-sound-sensor/",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "Analog",
+        "optional_connection": "",
+        "type": [
+          {
+            "name": "Audio",
+            "fn": [
+              "checkVol"
+            ]
+          }
+        ]
+      }
+    ],
+    "display": {}
+  },
+  {
+    "id": "DEV_3",
+    "mfr": "Dexter",
+    "mfr_part_no": "",
+    "description": "Grove - Temp&Humi Sensor",
+    "ic": "",
+    "price": "5.9",
+    "vcc_min": "",
+    "vcc_max": "",
+    "vccio_min": "",
+    "vccio_max": "",
+    "image": "https://statics3.seeedstudio.com/seeed/img/2017-02/0Es2ATc90JsEW4xNSNyBpVak.jpg",
+    "link": "https://www.seeedstudio.com/Grove---Temp%26amp%3BHumi-Sensor-p-745.html",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "Analog",
+        "optional_connection": "",
+        "type": [
+          {
+            "name": "Temperature",
+            "fn": [
+              "checkTemp"
+            ]
+          },
+          {
+            "name": "Humidity",
+            "fn": [
+              "humidity"
+            ]
+          }
+        ]
+      }
+    ],
+    "display": {}
+  },
+  {
+    "id": "DEV_4",
+    "mfr": "Dexter",
+    "mfr_part_no": "104030007",
+    "description": "Grove LED _ Green",
+    "ic": "",
+    "price": "1.9",
+    "vcc_min": "",
+    "vcc_max": "",
+    "vccio_min": "",
+    "vccio_max": "",
+    "image": "https://statics3.seeedstudio.com/images/product/grove%20greedled.jpg",
+    "link": "https://www.seeedstudio.com/Grove---Green-LED-p-1144.html",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "PWM",
+        "optional_connection": "GPIO",
+        "type": [
+          {
+            "name": "Led",
+            "fn": [
+              "on",
+              "off",
+              "dim"
+            ]
+          }
+        ]
+      }
+    ],
+    "display": {}
+  },
+  {
+    "id": "DEV_5",
+    "mfr": "Dexter",
+    "mfr_part_no": "104030005",
+    "description": "Grove LED _ Red",
+    "ic": "",
+    "price": "1.9",
+    "vcc_min": "",
+    "vcc_max": "",
+    "vccio_min": "",
+    "vccio_max": "",
+    "image": "https://statics3.seeedstudio.com/images/product/Red%20LED.jpg",
+    "link": "https://www.seeedstudio.com/Grove-Red-LED-p-1142.html",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "PWM",
+        "optional_connection": "GPIO",
+        "type": [
+          {
+            "name": "Led",
+            "fn": [
+              "on",
+              "off",
+              "dim"
+            ]
+          }
+        ]
+      }
+    ],
+    "display": {}
+  },
+  {
+    "id": "DEV_6",
+    "mfr": "Dexter",
+    "mfr_part_no": "104030010",
+    "description": "Grove LED _ Blue",
+    "ic": "",
+    "price": "1.9",
+    "vcc_min": "",
+    "vcc_max": "",
+    "vccio_min": "",
+    "vccio_max": "",
+    "image": "https://statics3.seeedstudio.com/images/product/groveblue%20led.jpg",
+    "link": "https://www.seeedstudio.com/Grove-Blue-LED-p-1139.html",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "PWM",
+        "optional_connection": "GPIO",
+        "type": [
+          {
+            "name": "Led",
+            "fn": [
+              "on",
+              "off",
+              "dim"
+            ]
+          }
+        ]
+      }
+    ],
+    "display": {}
+  },
+  {
+    "id": "DEV_7",
+    "mfr": "Dexter",
+    "mfr_part_no": "101020054",
+    "description": "Grove - 3-Axis Digital Accelerometer(16g)",
+    "ic": "",
+    "price": "9.9",
+    "vcc_min": "",
+    "vcc_max": "",
+    "vccio_min": "",
+    "vccio_max": "",
+    "image": "https://statics3.seeedstudio.com/images/101020054%201.jpg",
+    "link": "https://www.seeedstudio.com/Grove-3-Axis-Digital-Accelerometer%28%C2%B116g%29-p-1156.html",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "Analog",
+        "optional_connection": "",
+        "type": [
+          {
+            "name": "Accelerometer",
+            "fn": [
+              "accel_x",
+              "accel_y",
+              "accel_z"
+            ]
+          }
+        ]
+      }
+    ],
+    "display": {}
+  },
+  {
+    "id": "DEV_8",
+    "mfr": "Dexter",
+    "mfr_part_no": "101020017",
+    "description": "Grove - Rotary Angle Sensor",
+    "ic": "",
+    "price": "2.9",
+    "vcc_min": "",
+    "vcc_max": "",
+    "vccio_min": "",
+    "vccio_max": "",
+    "image": "https://statics3.seeedstudio.com/images/101020017%201.jpg",
+    "link": "https://www.seeedstudio.com/Grove-Rotary-Angle-Sensor-p-770.html",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "Analog",
+        "optional_connection": "",
+        "type": [
+          {
+            "name": "General",
+            "fn": [
+              "analogRead"
+            ]
+          }
+        ]
+      }
+    ],
+    "display": {}
+  },
+  {
+    "id": "DEV_9",
+    "mfr": "Dexter",
+    "mfr_part_no": "104030003",
+    "description": "Grove - 4-Digit Display",
+    "ic": "",
+    "price": "5.9",
+    "vcc_min": "",
+    "vcc_max": "",
+    "vccio_min": "",
+    "vccio_max": "",
+    "image": "https://statics3.seeedstudio.com/images/product/4-Digital%20Display.jpg",
+    "link": "https://www.seeedstudio.com/grove-4digital-display-p-1198.html",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "I2C",
+        "optional_connection": "",
+        "type": [
+          {
+            "name": "7Seg",
+            "fn": [
+              "show4digit",
+              "clear4digit"
+            ]
+          }
+        ]
+      }
+    ],
+    "display": {}
+  },
+  {
+    "id": "DEV_10",
+    "mfr": "Dexter",
+    "mfr_part_no": "103020005",
+    "description": "Grove - Relay",
+    "ic": "",
+    "price": "2.9",
+    "vcc_min": "",
+    "vcc_max": "",
+    "vccio_min": "",
+    "vccio_max": "",
+    "image": "https://statics3.seeedstudio.com/images/1030200051.jpg",
+    "link": "https://www.seeedstudio.com/Grove-Relay-p-769.html",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "GPIO",
+        "optional_connection": "",
+        "type": [
+          {
+            "name": "Relay",
+            "fn": [
+              "on",
+              "off"
+            ]
+          }
+        ]
+      }
+    ],
+    "display": {}
+  },
+  {
+    "id": "DEV_11",
+    "mfr": "Dexter",
+    "mfr_part_no": "",
+    "description": "Grove Button",
+    "ic": "",
+    "price": "4.99",
+    "vcc_min": "",
+    "vcc_max": "",
+    "vccio_min": "",
+    "vccio_max": "",
+    "image": "https://32414320wji53mwwch1u68ce-wpengine.netdna-ssl.com/wp-content/uploads/2015/07/Grove-Button--800x800.jpg",
+    "link": "https://www.dexterindustries.com/shop/grove-button/",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "GPIO",
+        "optional_connection": "",
+        "type": [
+          {
+            "name": "Button",
+            "fn": [
+              "release",
+              "doubleRelease"
+            ]
+          }
+        ]
+      }
+    ],
+    "display": {}
+  },
+  {
+    "id": "DEV_12",
+    "mfr": "Dexter",
+    "mfr_part_no": "101020014",
+    "description": "Grove - Light Sensor",
+    "ic": "",
+    "price": "2.9",
+    "vcc_min": "",
+    "vcc_max": "",
+    "vccio_min": "",
+    "vccio_max": "",
+    "image": "https://32414320wji53mwwch1u68ce-wpengine.netdna-ssl.com/wp-content/uploads/2015/07/Grove-Ultrasonic-Sensor-800x800.jpg",
+    "link": "https://www.seeedstudio.com/Grove-Light-Sensor-p-746.html",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "Analog",
+        "optional_connection": "",
+        "type": [
+          {
+            "name": "Light",
+            "fn": [
+              "light"
+            ]
+          }
+        ]
+      }
+    ],
+    "display": {}
+  },
+  {
+    "id": "DEV_13",
+    "mfr": "Dexter",
+    "mfr_part_no": "",
+    "description": "Ultrasonic Sensor",
+    "ic": "",
+    "price": "19.99",
+    "vcc_min": "",
+    "vcc_max": "",
+    "vccio_min": "",
+    "vccio_max": "",
+    "image": "https://32414320wji53mwwch1u68ce-wpengine.netdna-ssl.com/wp-content/uploads/2015/07/Grove-Ultrasonic-Sensor-800x800.jpg",
+    "link": "https://www.dexterindustries.com/shop/ultrasonic-sensor/",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "I2C",
+        "optional_connection": "",
+        "type": [
+          {
+            "name": "Ultrasonic",
+            "fn": [
+              "distance"
+            ]
+          }
+        ]
+      }
+    ],
+    "display": {}
+  },
+  {
+    "id": "DEV_14",
+    "mfr": "Dexter",
+    "mfr_part_no": "104030001",
+    "description": "Grove - LCD RGB Backlight",
+    "ic": "",
+    "price": "13.9",
+    "vcc_min": "",
+    "vcc_max": "",
+    "vccio_min": "",
+    "vccio_max": "",
+    "image": "https://statics3.seeedstudio.com/images/104030001%201.jpg",
+    "link": "https://www.seeedstudio.com/Grove-LCD-RGB-Backlight-p-1643.html",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "I2C",
+        "optional_connection": "",
+        "type": [
+          {
+            "name": "Alphanumeric LCD",
+            "fn": [
+              "backlight_on",
+              "backlight_off",
+              "show",
+              "clear",
+              "backlight_color"
+            ]
+          }
+        ]
+      }
+    ],
+    "display": {}
+  },
+  {
+    "id": "DEV_15",
+    "mfr": "Dexter",
+    "mfr_part_no": "101020020",
+    "description": "Grove - PIR Motion Sensor",
+    "ic": "",
+    "price": "8.9",
+    "vcc_min": "",
+    "vcc_max": "",
+    "vccio_min": "",
+    "vccio_max": "",
+    "image": "https://statics3.seeedstudio.com/images/product/Grove%20-%20PIR%20Motion%20Sensor.jpg",
+    "link": "https://www.seeedstudio.com/Grove-PIR-Motion-Sensor-p-802.html",
+    "sub_device": [],
+    "compatibility": [
+      {
+        "connection": "GPIO",
+        "optional_connection": "",
+        "type": [
+          {
+            "name": "PIR",
+            "fn": [
+              "motion"
+            ]
+          }
+        ]
+      }
+    ],
+    "display": {}
+  }
+]
