@@ -1,7 +1,8 @@
 var libhelper = require('./libhelper.js');
 
-const STANDALONE_MCU_GAP = 25;
-const BREADBOARD_TOP_MARGIN = 100;
+const STANDALONE_MCU_GAP = 50;
+const BREADBOARD_TOP_MARGIN = 200;
+const PIN_SPACE = 14.4;
 
 // breadboard size
 const breadboard = {
@@ -14,14 +15,14 @@ const breadboard = {
     },
     large: {
         name: 'breadboard_large',
-        width: 468.238,
-        height: 151.199,
-        top_power_pin: { x: 25.333, y: 7.2 },
-        power_pin_gap: 14.4,
-        top_connection_pin: { x: 10.92, y: 36 },
-        num_rows: 63,
-        bottom_power_pin: { x: 25.333, y: 136.8 },
-        center_gap: 21.6
+        width: 468.238 * 2,
+        height: 151.199 * 2,
+        top_power_pin: { x: 25.333 * 2, y: 7.2 * 2 },
+        power_pin_gap: 14.4 * 2,
+        top_connection_pin: { x: 10.92 * 2, y: 36 * 2 },
+        num_rows: 63 * 2,
+        bottom_power_pin: { x: 25.333 * 2, y: 136.8 * 2},
+        center_gap: 21.6 * 2
     }
 };
 
@@ -133,7 +134,7 @@ module.exports = {
         // calculate position in the breadboard for the devices that need breadboard connection
         const breadboardHole = [];
         const firstDevice = libhelper.findDeviceById(data['platform'], breadboardDevice[0]['type']);
-        const hole = Math.ceil(firstDevice['display']['pin'][0]['x'] / 7.2);
+        const hole = Math.ceil(firstDevice['display']['pin'][0]['x'] / PIN_SPACE);
         const x = board['top_connection_pin']['x'] - firstDevice['display']['pin'][0].x;
         const y = BREADBOARD_TOP_MARGIN + board['top_connection_pin']['y']
             - firstDevice['display']['pin'][0].y;
@@ -152,10 +153,10 @@ module.exports = {
             const currentDevice = libhelper.findDeviceById(data['platform'], breadboardDevice[i]['type']);
             const leftSpace = currentDevice['display']['pin'][0].x;
 
-            const hole = holeUsed + Math.ceil(rightSpace / 7.2) + Math.ceil(leftSpace / 7.2);
+            const hole = holeUsed + Math.ceil(rightSpace / PIN_SPACE) + Math.ceil(leftSpace / PIN_SPACE);
             breadboardHole.push(breadboardHole[i - 1] + hole - 1);
 
-            const x = (board['top_connection_pin']['x'] + ((breadboardHole[i] - 1) * 7.2))
+            const x = (board['top_connection_pin']['x'] + ((breadboardHole[i] - 1) * PIN_SPACE))
                 - currentDevice['display']['pin'][0].x;
             const y = BREADBOARD_TOP_MARGIN + board['top_connection_pin']['y']
                 - currentDevice['display']['pin'][0].y;
@@ -201,12 +202,12 @@ module.exports = {
         //     response['connections'].push(
         //         {
         //             type: 'SDA',
-        //             startx: board['top_connection_pin']['x'] + ((i2cDeviceHole[i] - 1) * 7.2)
+        //             startx: board['top_connection_pin']['x'] + ((i2cDeviceHole[i] - 1) * PIN_SPACE)
         //             - dev1['display']['pin'][0]['x'] + parseInt(sdaPin1.x),
-        //             starty: BREADBOARD_TOP_MARGIN + board['top_connection_pin']['y'] + 7.2 * ((i % 2) + 1),
-        //             endx: board['top_connection_pin']['x'] + ((i2cDeviceHole[i + 1] - 1) * 7.2)
+        //             starty: BREADBOARD_TOP_MARGIN + board['top_connection_pin']['y'] + PIN_SPACE * ((i % 2) + 1),
+        //             endx: board['top_connection_pin']['x'] + ((i2cDeviceHole[i + 1] - 1) * PIN_SPACE)
         //             - dev2['display']['pin'][0]['x'] + parseInt(sdaPin2.x),
-        //             endy: BREADBOARD_TOP_MARGIN + board['top_connection_pin']['y'] + 7.2 * ((i % 2) + 1),
+        //             endy: BREADBOARD_TOP_MARGIN + board['top_connection_pin']['y'] + PIN_SPACE * ((i % 2) + 1),
         //         }
         //     );
         //     const sclPin1 = findDevicePinByConnection(dev1, 'SCL');
@@ -214,12 +215,12 @@ module.exports = {
         //     response['connections'].push(
         //         {
         //             type: 'SCL',
-        //             startx: board['top_connection_pin']['x'] + ((i2cDeviceHole[i] - 1) * 7.2)
+        //             startx: board['top_connection_pin']['x'] + ((i2cDeviceHole[i] - 1) * PIN_SPACE)
         //             - dev1['display']['pin'][0]['x'] + parseInt(sclPin1.x),
-        //             starty: BREADBOARD_TOP_MARGIN + board['top_connection_pin']['y'] + 14.4 + 7.2 * ((i % 2) + 1),
-        //             endx: board['top_connection_pin']['x'] + ((i2cDeviceHole[i + 1] - 1) * 7.2)
+        //             starty: BREADBOARD_TOP_MARGIN + board['top_connection_pin']['y'] + PIN_SPACE * 2 + PIN_SPACE * ((i % 2) + 1),
+        //             endx: board['top_connection_pin']['x'] + ((i2cDeviceHole[i + 1] - 1) * PIN_SPACE)
         //             - dev2['display']['pin'][0]['x'] + parseInt(sclPin2.x),
-        //             endy: BREADBOARD_TOP_MARGIN + board['top_connection_pin']['y'] + 14.4 + 7.2 * ((i % 2) + 1),
+        //             endy: BREADBOARD_TOP_MARGIN + board['top_connection_pin']['y'] + PIN_SPACE * 2 + PIN_SPACE * ((i % 2) + 1),
         //         }
         //     );
         // }
@@ -233,20 +234,20 @@ module.exports = {
             response['connections'].push(
                 {
                     type: 'PWR',
-                    startx: board['top_connection_pin']['x'] + ((breadboardHole[i] - 1) * 7.2)
+                    startx: board['top_connection_pin']['x'] + ((breadboardHole[i] - 1) * PIN_SPACE)
                     - currDevice['display']['pin'][0]['x'] + parseInt(vccPin.x),
-                    starty: BREADBOARD_TOP_MARGIN + board['top_connection_pin']['y'] + 14.4,
-                    endx: board['bottom_power_pin']['x'] + 28.8 + board['power_pin_gap'] + (7.2 * i),
-                    endy: BREADBOARD_TOP_MARGIN + board['bottom_power_pin']['y'] + 7.2
+                    starty: BREADBOARD_TOP_MARGIN + board['top_connection_pin']['y'] + PIN_SPACE * 2,
+                    endx: board['bottom_power_pin']['x'] + PIN_SPACE * 4 + board['power_pin_gap'] + (PIN_SPACE * i),
+                    endy: BREADBOARD_TOP_MARGIN + board['bottom_power_pin']['y'] + PIN_SPACE
                 });
             const gndPin = findDevicePinByConnection(currDevice, 'GND');
             response['connections'].push(
                 {
                     type: 'GND',
-                    startx: board['top_connection_pin']['x'] + ((breadboardHole[i] - 1) * 7.2)
+                    startx: board['top_connection_pin']['x'] + ((breadboardHole[i] - 1) * PIN_SPACE)
                     - currDevice['display']['pin'][0]['x'] + parseInt(gndPin.x),
-                    starty: BREADBOARD_TOP_MARGIN + board['top_connection_pin']['y'] + 14.4,
-                    endx: board['bottom_power_pin']['x'] + 28.8 + board['power_pin_gap'] + (7.2 * i),
+                    starty: BREADBOARD_TOP_MARGIN + board['top_connection_pin']['y'] + PIN_SPACE * 2,
+                    endx: board['bottom_power_pin']['x'] + PIN_SPACE * 4 + board['power_pin_gap'] + (PIN_SPACE * i),
                     endy: BREADBOARD_TOP_MARGIN + board['bottom_power_pin']['y']
                 });
         }
@@ -260,7 +261,7 @@ module.exports = {
                 startx: parseInt(vccPin.x),
                 starty: BREADBOARD_TOP_MARGIN + STANDALONE_MCU_GAP + board['height'] + parseInt(vccPin.y),
                 endx: board['bottom_power_pin']['x'],
-                endy: BREADBOARD_TOP_MARGIN + board['bottom_power_pin']['y'] + 7.2
+                endy: BREADBOARD_TOP_MARGIN + board['bottom_power_pin']['y'] + PIN_SPACE
             },
             {
                 type: 'GND',
@@ -283,9 +284,9 @@ module.exports = {
                 response['connections'].push(
                     {
                         type: connection,
-                        startx: board['top_connection_pin']['x'] + ((breadboardHole[i] - 1) * 7.2)
+                        startx: board['top_connection_pin']['x'] + ((breadboardHole[i] - 1) * PIN_SPACE)
                         - currDevice['display']['pin'][0]['x'] + parseInt(pin.x),
-                        starty: BREADBOARD_TOP_MARGIN + board['top_connection_pin']['y'] + 14.4,
+                        starty: BREADBOARD_TOP_MARGIN + board['top_connection_pin']['y'] + PIN_SPACE * 2,
                         endx: parseInt(mcuPin.x),
                         endy: BREADBOARD_TOP_MARGIN + STANDALONE_MCU_GAP + board['height'] + parseInt(mcuPin.y),
                     }

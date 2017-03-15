@@ -1,7 +1,8 @@
-var actions = require('./lib/action.json');
-var triggers = require('./lib/trigger.json');
-var interfaces = require('./lib/interface.json');
-var devices = require('./lib/device.json');
+var libhelper = require('./libhelper.js');
+// var actions = require('./lib/action.json');
+// var triggers = require('./lib/trigger.json');
+// //var interfaces = require('./lib/interface.json');
+// var devices = require('./lib/device.json');
 
 const INDENT_CHAR = '\t';
 const INDENT_CHAR2 = '\t\t';
@@ -12,57 +13,57 @@ String.prototype.replaceAll = function (search, replacement) {
     return target.split(search).join(replacement);
 };
 
-function findActionById(id) {
-    for (var category of actions) {
-        for (var action of category['children']) {
-            if (action['id'] === id)
-                return action;
-        }
-    }
-    return undefined;
-}
+// function findActionById(id) {
+//     for (var category of actions) {
+//         for (var action of category['children']) {
+//             if (action['id'] === id)
+//                 return action;
+//         }
+//     }
+//     return undefined;
+// }
 
-function findTriggerById(id) {
-    for (var category of triggers) {
-        for (var trigger of category['children']) {
-            if (trigger['id'] === id)
-                return trigger;
-        }
-    }
-    return undefined;
-}
+// function findTriggerById(id) {
+//     for (var category of triggers) {
+//         for (var trigger of category['children']) {
+//             if (trigger['id'] === id)
+//                 return trigger;
+//         }
+//     }
+//     return undefined;
+// }
 
-function findEdgeBySrcNode(graph, nodeId) {
-    var result = [];
-    for (var edgeId of Object.keys(graph['edges'])) {
-        var edge = graph['edges'][edgeId];
-        if (edge['src_node_id'] === nodeId) {
-            result.push(edge);
-        }
-    }
-    return result;
-}
+// function findEdgeBySrcNode(graph, nodeId) {
+//     var result = [];
+//     for (var edgeId of Object.keys(graph['edges'])) {
+//         var edge = graph['edges'][edgeId];
+//         if (edge['src_node_id'] === nodeId) {
+//             result.push(edge);
+//         }
+//     }
+//     return result;
+// }
 
-function findEdgeBySrcDestNode(graph, nodeId) {
-    var result = [];
-    for (var edgeId of Object.keys(graph['edges'])) {
-        var edge = graph['edges'][edgeId];
-        console.log('src ' + edge['src_node_id'] + ' dest ' + edge['dest_node_id']);
-        if (edge['src_node_id'] === nodeId || edge['dest_node_id'] === nodeId) {
-            result.push(edge);
-        }
-    }
-    return result;
-}
+// function findEdgeBySrcDestNode(graph, nodeId) {
+//     var result = [];
+//     for (var edgeId of Object.keys(graph['edges'])) {
+//         var edge = graph['edges'][edgeId];
+//         console.log('src ' + edge['src_node_id'] + ' dest ' + edge['dest_node_id']);
+//         if (edge['src_node_id'] === nodeId || edge['dest_node_id'] === nodeId) {
+//             result.push(edge);
+//         }
+//     }
+//     return result;
+// }
 
-function findDeviceById(id) {
-    for (var device of devices) {
-        if (device['id'] === id) {
-            return device;
-        }
-    }
-    return undefined;
-}
+// function findDeviceById(id) {
+//     for (var device of devices) {
+//         if (device['id'] === id) {
+//             return device;
+//         }
+//     }
+//     return undefined;
+// }
 
 module.exports = {
     generateCode: function (graph) {
@@ -106,10 +107,10 @@ module.exports = {
 
         // update device_id and libname into data
         for (var value of data.values()) {
-            var mp_interface = interfaces[value['interface']][0];   // TODO: Hardcoded
-            if (mp_interface === undefined) {
-               throw 'Error: unknown interface name => ' + value['interface'];
-            }
+            // var mp_interface = interfaces[value['interface']][0];   // TODO: Hardcoded
+            // if (mp_interface === undefined) {
+            //    throw 'Error: unknown interface name => ' + value['interface'];
+            // }
             value['lib_name'] = mp_interface['lib_name'];
             value['lib_path'] = mp_interface['lib_path'];
             value['device_id'] = mp_interface['device_id'];
